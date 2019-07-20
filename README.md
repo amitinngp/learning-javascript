@@ -300,4 +300,4 @@ checkAccount = {
   name = 'Saving Acount'
 }
 ```
-### Array
+### Arrays
