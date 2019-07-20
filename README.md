@@ -105,8 +105,8 @@ e.g.
 ```
 e.g.
     { "address" : {
-            "district" : "Wan Chai"
-            "city": "Hong Kong"
+            district: "Wan Chai"
+            city: "Hong Kong"
         }
     }
 
@@ -126,9 +126,9 @@ person object  can all function using  person.call()
 ```
 e.g.
      var person = { "address" : {
-            "district" : "Wan Chai"
-            "city" : "Hong Kong"
-            "call" : function({"phoneNumber": "+8523445678"}){}
+            district: "Wan Chai"
+            city : "Hong Kong"
+            call : function({"phoneNumber": "+8523445678"}){}
         }
     }
     or
@@ -152,9 +152,9 @@ e.g
   var person = {
       name: "javascript",
       address: {
-            "district" : "Wan Chai"
-            "city" : "Hong Kong"
-            "call" : function({"phoneNumber": "+8523445678"}){}
+            district: "Wan Chai"
+            city : "Hong Kong"
+            call : function({"phoneNumber": "+8523445678"}){}
         }
   }
   or
@@ -169,9 +169,9 @@ e.g
 var person = {
       name: "Javascript",
       address: {
-            "district" : "Wan Chai"
-            "city" : "Hong Kong"
-            "call" : function() {
+            district: "Wan Chai"
+            city : "Hong Kong"
+            call : function() {
             }
         }
   }
@@ -194,17 +194,17 @@ var listofpersons = {[
     {
       name: "javascript",
       address: {
-            "district" : "Wan Chai"
-            "city" : "Hong Kong"
-            "call" : fuction({"phoneNumber": "+8523445678"}){}
+            district: "Wan Chai"
+            city : "Hong Kong"
+            call : fuction({"phoneNumber": "+8523445678"}){}
         }
   },
   {
       name: "typescript",
       address: {
-            "district" : "central"
-            "city" : "Hong Kong"
-            "call" : function({"phoneNumber": "+8523445679"}){}
+            district: "central"
+            city : "Hong Kong"
+            call : function({"phoneNumber": "+8523445679"}){}
         }
   }
 ]
