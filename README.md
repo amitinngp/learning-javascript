@@ -34,6 +34,7 @@ Knowledge of javascripts basics
  ### Prerequisites
  1. install [npm](https://www.npmjs.com/get-npm) and run below command
     > npm init 
+
     and write according to your's environment , for example
 - package name: [your package name]
 - version: (1.0.0) 
@@ -44,12 +45,15 @@ Knowledge of javascripts basics
 - keywords: 
 - author: 
 - license: (ISC)
-  1. Install [http-server](https://www.npmjs.com/package/http-server)     
-    > npm i http-server     
+
+1. Install [http-server](https://www.npmjs.com/package/http-server)     
+    > npm i http-server  
+
  ### Run Project 
-    > npm start  
+
+ -   > npm start  
 
  ### Getting started
 
-### 1. Objects
+### Objects 
 Objects in javascripts 
