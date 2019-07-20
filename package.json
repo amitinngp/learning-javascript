@@ -1,0 +1,24 @@
+{
+  "name": "learning-javascript",
+  "version": "1.0.0",
+  "description": "## Prerequisites Knowledge of javascripts basics - \"use strict\" - Variables - Type Conversions - Operators - Comparisons - Conditional operators: if, '?' - Logical operators - Loops: while and for - The \"switch\" statement - functions",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "",
+    "update-deps": "npm update",
+    "postupdate-deps": "",
+    "prestart": "npm install",
+    "start": "http-server -a localhost -p 9903 -o -c-1 ./app",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amitinngp/learning-javascript.git"
+  },
+  "author": "Amit",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amitinngp/learning-javascript/issues"
+  },
+  "homepage": "https://github.com/amitinngp/learning-javascript#readme"
+}

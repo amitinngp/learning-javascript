@@ -30,4 +30,21 @@ Knowledge of javascripts basics
 1. [Template Literals](#teamplate-literals)
 
 
-
+##Creating environment to run 
+ ### Prerequisites
+ 1. install [npm](https://www.npmjs.com/get-npm) and run below command
+    [x] > npm init 
+        and write according to your's environment , for example
+        package name: [your package name]
+        version: (1.0.0) 
+        description: 
+        entry point: (index.js) 
+        test command: 
+        git repository: [Path to your repository]
+        keywords: 
+        author: 
+        license: (ISC)
+  1. Install [http-server](https://www.npmjs.com/package/http-server)     
+    [x] > npm i http-server     
+ ### Run Project 
+    [x] > npm start  
