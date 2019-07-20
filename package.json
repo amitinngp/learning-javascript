@@ -8,7 +8,7 @@
     "update-deps": "npm update",
     "postupdate-deps": "",
     "prestart": "npm install",
-    "start": "http-server -a localhost -p 9903 -o -c-1 ./app",
+    "start": "http-server -a localhost -p 9903 -o -c-1 ./learn",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/amitinngp/learning-javascript/issues"
   },
-  "homepage": "https://github.com/amitinngp/learning-javascript#readme"
+  "homepage": "https://github.com/amitinngp/learning-javascript#readme",
+  "dependencies": {
+    "http-server": "^0.11.1"
+  }
 }
