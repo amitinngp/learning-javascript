@@ -50,7 +50,17 @@ Knowledge of javascripts basics
     > npm i http-server  
 
  ### Run Project 
-
+ Add below on scripts in package.json
+ ```
+"scripts": {
+    "postinstall": "",
+    "update-deps": "npm update",
+    "postupdate-deps": "",
+    "prestart": "npm install",
+    "start": "http-server -a localhost -p 9903 -o -c-1 ./learn",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+ ```
  -   > npm start  
 
  ### Getting started
