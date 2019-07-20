@@ -1,4 +1,4 @@
-# Learning Javascripts (not basics)
+# Learning JavaScripts (not basics)
 
 ## Prerequisites
 
@@ -300,3 +300,4 @@ checkAccount = {
   name = 'Saving Acount'
 }
 ```
+### Array
