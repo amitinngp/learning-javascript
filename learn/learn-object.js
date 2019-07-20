@@ -26,13 +26,15 @@ const pageModel = {
 Example 2  Object with complex keys
 creating objects with dynamic property names and computed key
 */
-function getPersonKey(k) {
+var keyfromotherfunction = "name" // This can be any dynamic computed value
+function getKey(k) {
   console.log(k);
   return `${k}`;
 }
+
 const obj = {
   id: 5,
-  [getPersonKey("name")]: "javascript"
+  [getKey(keyfromotherfunction)]: "javascript"
 };
 
 console.log(obj)
