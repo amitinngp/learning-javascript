@@ -38,19 +38,12 @@ const obj = {
 console.log(obj)
 
  /* 
-Example 3  Object with complex keys
+Example 3  Object with invlid keys
 Only invalid identifiers should be in single quote
 */
-// bad
-const badObj = {
-  'one': 1,
-  'two': 2,
-  'three-key': 3,
-};
 
-// good
-const goodObj = {
+const Obj = {
   one: 1,
   two: 2,
-  'three-key': 3,
+  'three-key': 3, // it can not be three-key: 3
 };
