@@ -46,7 +46,7 @@ Knowledge of javascripts basics
 - author: 
 - license: (ISC)
 
-1. Install [http-server](https://www.npmjs.com/package/http-server)     
+2. Install [http-server](https://www.npmjs.com/package/http-server)     
     > npm i http-server  
 
  ### Run Project 
