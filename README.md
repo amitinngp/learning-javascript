@@ -66,7 +66,7 @@ Add below on scripts in package.json
    "update-deps": "npm update",
    "postupdate-deps": "",
    "prestart": "npm install",
-   "start": "http-server -a localhost -p 9903 -o -c-1 ./learn",
+   "start": "http-server -a localhost -p 9903 -o -c-1 ./learn", // ./learn  and port you can change
    "test": "echo \"Error: no test specified\" && exit 1"
  },
 ```
