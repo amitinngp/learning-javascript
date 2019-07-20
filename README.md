@@ -30,7 +30,7 @@ Knowledge of javascripts basics
 1. [Template Literals](#teamplate-literals)
 
 
-##Creating environment to run 
+## Creating environment to run 
  ### Prerequisites
  1. install [npm](https://www.npmjs.com/get-npm) and run below command
     [x] > npm init 
@@ -48,4 +48,3 @@ Knowledge of javascripts basics
     [x] > npm i http-server     
  ### Run Project 
     [x] > npm start  
-    
