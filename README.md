@@ -228,4 +228,4 @@ const pageModel = {
   };
 ```
  In short , objects are used to store key-value collections of various data types with more complex structure.
- Perperties and Functions within object can be accessed using properties accessor **[]**  or **.**
+ Properties and Functions within object can be accessed using properties accessor **[]**  or **.**
