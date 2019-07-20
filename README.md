@@ -228,4 +228,75 @@ const pageModel = {
   };
 ```
  In short , objects are used to store key-value collections of various data types with more complex structure.
- Properties and Functions within object can be accessed using properties accessor **[]**  or **.**
+
+ - Access Object
+
+ Using . and [] accessor 
+ Properties and Functions within object can be accessed using properties accessor **[]**  or **.**.
+ Commonly **.** accessor is  used much than **[]**.Due to simple reason of complexity associated with the **[]**.
+ But **[]** is also powerful on its own.Let say you want to compute the key value based on some input  then  **[]**
+ accessor is very useful.For example,  you want to compute the account type key based on users choice 
+ ```
+ let PersonAccount = {
+   [accountType] : function(){
+     var calacutedAccoutNumberBasedonLogic = '000000123456' //assuming its after calculating
+     return calacutedAccoutNumberBasedonLogic
+   }
+ }
+ if (isCumputedCurrentMatched){
+  console.log('do something with '+ PersonAccount.CurrentAccount());
+ }else {
+  console.log('do something with '+ PersonAccount.SavingAccount());
+ }
+ ```
+even tough we don't have CurrentAccount() and SavingAccount() in PersonAccount object at first, we generated it on fly based on computed values. it can go more compelx.
+
+- Property value shorthand
+When we use both key and properties name with same value it can be written shorthand.
+```
+const name = "CurrentAccount";
+const accountNumber = "12344566788";
+let UserAccount = function(){
+  return {
+    name: name,
+    accountNumber: accountNumber,
+    };
+}
+console.log(UserAccount().name);
+```
+Can be written as 
+```
+ const name = "CurrentAccount";
+const accountNumber = "12344566788";
+let UserAccount = function(){
+  return {
+    name,
+    accountNumber,
+    };
+}
+console.log(UserAccount().name1);
+```
+Internally its a key-value pair with same value , like **name:name** or **accountNumber:accountNumber**
+
+- To iterate over an object key
+```
+for (let key in pageModel){
+  console.log(key);
+}
+```
+- Object as const
+
+ we can add more properties to const object.
+```
+const checkAccount = {
+    name:'Current Account'
+};
+checkAccount.accountNumber = "12345678987654"; 
+console.log(checkAccount.accountNumber);
+```
+It wil give error,only if we try to set value of object itself
+```
+checkAccount = {
+  name = 'Saving Acount'
+}
+```
