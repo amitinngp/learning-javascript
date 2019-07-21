@@ -249,7 +249,7 @@ const pageModel = {
   console.log('do something with '+ PersonAccount.SavingAccount());
  }
  ```
-even tough we don't have CurrentAccount() and SavingAccount() in PersonAccount object at first, we generated it on fly based on computed values. it can go more compelx.
+Even though we don't have CurrentAccount() and SavingAccount() in PersonAccount object at first, we generated it on fly based on computed values. it can go more compelx.
 
 - Property value shorthand
 When we use both key and properties name with same value it can be written shorthand.
@@ -301,3 +301,75 @@ checkAccount = {
 }
 ```
 ### Arrays
+When we want object of ordered data items, then use Arrays.
+It means that Arrays is also an object but of ordered type, that means they are stored in memory in 
+consecutive order as opposed to normal object.
+Arrays can be declared as [] or new Array();
+Let check how Arrays are object.
+```
+let obj1 = {};
+let arrays1 = [];
+console.log(arrays1 instanceof Array) // true
+console.log(obj1 instanceof Object) // true 
+console.log(arrays1 instanceof Object) // true
+```
+That means the properties of Arrays can be accessed similar to Object.
+```
+let arraysOfNumber = [12,42,33,4,52];
+for (let key in arraysOfNumber){
+    console.log("Values in arrays at "+ key +" = "+ arraysOfNumber[key]);
+  }
+ ```
+ We can use an array as a deque with the following operations:
+- To end
+  - push(...items) adds items to the end.
+  - pop() removes the element from the end and returns it.
+- To Front  
+  - shift() removes the element from the beginning and returns it.
+  - unshift(...items) adds items to the beginning.
+
+
+> push/pop are fast, while shift/unshift are slow , for the simple reason of more elements in arrya will need more time to shift and more opearation than just push and pop at last/top.
+
+```
+var data = [ "Z" ];
+data.push( "A" );
+data.push( "B", "C" );
+console.log( "Push Data at End" );
+console.log( data );
+```
+> Push Data at End
+
+> ["Z", "A", "B", "C"]
+```
+var data = [ "Z" ];
+data.unshift( "A" );
+data.unshift( "B", "C" );
+console.log( "Unshift Data at Front" );
+console.log( data );
+```
+> Unshift Data at Front
+
+> ["B", "C", "A", "Z"]
+
+> C
+```
+var data = [ "A", "B", "C" ];
+console.log( data.pop() );
+console.log( "Pop Data" );
+console.log( data );
+```
+> Pop Data at End
+
+> ["A", "B"]
+
+> A
+```
+var data = [ "A", "B", "C" ];
+console.log( data.shift() );
+console.log( "Shift Data" );
+console.log( data );
+```
+> Shift Data at Front
+
+> ["B", "C"]
