@@ -329,7 +329,7 @@ for (let key in arraysOfNumber){
   - unshift(...items) adds items to the beginning.
 
 
-> push/pop are fast, while shift/unshift are slow , for the simple reason of more elements in arrya will need more time to shift and more opearation than just push and pop at last/top.
+> push/pop are fast, while shift/unshift are slow , for the simple reason of more elements in arrays will need more time to shift and more opearation than just push and pop at last/top.
 
 ```
 var data = [ "Z" ];
