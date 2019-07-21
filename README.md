@@ -386,6 +386,19 @@ console.log( data );
     ```
     list.concat([X,Y])      // → [_,_,_,_,_,X,Y]
     ```
+- Subsets
+  - Immutable 
+    ```
+    list.slice(0,1)         // → [a        ]
+    list.slice(1)           // → [  b,c,d,e]
+    list.slice(1,2)         // → [  b      ]
+    ```   
+  - Mutative
+    ```
+    list.slice(0,1)         // → [a        ]
+    list.slice(1)           // → [  b,c,d,e]
+    list.slice(1,2)         // → [  b      ]
+    ```
 - Inserting
 ```
 // after -- [_,_,REF,NEW,_,_]
@@ -417,3 +430,34 @@ list.splice(2, 1)       // → [c]  list == [a,b,d,e]
 more you can find at [devhints](https://devhints.io/js-array)
 
 Let dig into few of frequently used one.
+
+- splice  vs  slice
+  - splice (used for Replace,Mutative Subsets ,Inserting and Removing items)
+  
+      > In splice ,**first** parameter defines the position where new elements should be **added** and 
+      **second** parameter defines how many elements should be **removed** and rest parameters separated by **,**
+      is considered as items to be **added**.
+      ```
+      var data = ["1", "2", "3", "4"];
+      data.splice(2, 1, "5", "6");
+      ["1", "2", "5", "6", "4"]
+      ```
+      Here its will remove "3" (as zero-based indices) and add "5","6".
+      Now  what if we don't give the anything after 2nd parameter then its will simply remove and add nothing.
+      ```
+      var data = ["1", "2", "3", "4"];
+      data.splice(2, 1);
+      ["1", "2", "4"]
+      ``` 
+  - slice(Immutable Subsets)
+
+      > It can have either 1 or 2 arguments and it selects array elements from the start argument(param 1), and up to (but not included) the end argument(param 2) and return only the items from start argument to end argument (excluding end argument).
+      ```
+      var data = ["1", "2", "3", "4"];
+      data.splice(2, 1); // start from "3" but upto 1 element.
+      ["3"]
+
+       var data = ["1", "2", "3", "4"];
+      data.splice(2); // start from "3" but upto no number mentioned then till end.
+      ["3", "4"]
+      ```
