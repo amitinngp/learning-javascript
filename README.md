@@ -60,7 +60,7 @@ Knowledge of javascripts basics
 
 Add below on scripts in package.json
 
-```
+```javascript
 "scripts": {
    "postinstall": "",
    "update-deps": "npm update",
@@ -91,7 +91,7 @@ Key : value pairs can be any combination of key with:
 
 - **Primitive** (type which is not an object) [undefined , null , boolean, number, string ,symbol]
 
-```
+```javascript
 e.g.
  { "age" : 30 } , { isPrimitive: boolean}, {"name" : "javascript"}
  or
@@ -102,7 +102,7 @@ e.g.
 
 - **Object**
 
-```
+```javascript
 e.g.
     { "address" : {
             district: "Wan Chai"
@@ -123,7 +123,7 @@ e.g.
 
 person object  can all function using  person.call()
 
-```
+```javascript
 e.g.
      var person = { "address" : {
             district: "Wan Chai"
@@ -147,7 +147,7 @@ and each value pairs can hold another collections of key value pairs.
 
   **address** object is within **person** object
 
-```
+```javascript
 e.g
   var person = {
       name: "javascript",
@@ -165,7 +165,7 @@ e.g
 ```
 
 - **Function in Object**
-```
+```javascript
 var person = {
       name: "Javascript",
       address: {
@@ -189,7 +189,7 @@ app.bootstrap(pageModel)
 
 - **Array in Object**
 
-```
+```javascript
 var listofpersons = {[
     {
       name: "javascript",
@@ -236,7 +236,7 @@ const pageModel = {
  Commonly **.** accessor is  used much than **[]**.Due to simple reason of complexity associated with the **[]**.
  But **[]** is also powerful on its own.Let say you want to compute the key value based on some input  then  **[]**
  accessor is very useful.For example,  you want to compute the account type key based on users choice 
- ```
+ ```javascript
  let PersonAccount = {
    [accountType] : function(){
      var calacutedAccoutNumberBasedonLogic = '000000123456' //assuming its after calculating
@@ -253,7 +253,7 @@ Even though we don't have CurrentAccount() and SavingAccount() in PersonAccount 
 
 - Property value shorthand
 When we use both key and properties name with same value it can be written shorthand.
-```
+```javascript
 const name = "CurrentAccount";
 const accountNumber = "12344566788";
 let UserAccount = function(){
@@ -265,7 +265,7 @@ let UserAccount = function(){
 console.log(UserAccount().name);
 ```
 Can be written as 
-```
+```javascript
  const name = "CurrentAccount";
 const accountNumber = "12344566788";
 let UserAccount = function(){
@@ -279,7 +279,7 @@ console.log(UserAccount().name1);
 Internally its a key-value pair with same value , like **name:name** or **accountNumber:accountNumber**
 
 - To iterate over an object key
-```
+```javascript
 for (let key in pageModel){
   console.log(key);
 }
@@ -287,7 +287,7 @@ for (let key in pageModel){
 - Object as const
 
  we can add more properties to const object.
-```
+```javascript
 const checkAccount = {
     name:'Current Account'
 };
@@ -295,7 +295,7 @@ checkAccount.accountNumber = "12345678987654";
 console.log(checkAccount.accountNumber);
 ```
 It wil give error,only if we try to set value of object itself
-```
+```javascript
 checkAccount = {
   name = 'Saving Acount'
 }
@@ -308,7 +308,7 @@ It means that Arrays is also an object but of ordered type, that means they are 
 consecutive order as opposed to normal object.
 Arrays can be declared as [] or new Array();
 Let check how Arrays are object.
-```
+```javascript
 let obj1 = {};
 let arrays1 = [];
 console.log(arrays1 instanceof Array) // true
@@ -316,7 +316,7 @@ console.log(obj1 instanceof Object) // true
 console.log(arrays1 instanceof Object) // true
 ```
 That means the properties of Arrays can be accessed similar to Object.
-```
+```javascript
 let arraysOfNumber = [12,42,33,4,52];
 for (let key in arraysOfNumber){
     console.log("Values in arrays at "+ key +" = "+ arraysOfNumber[key]);
@@ -333,7 +333,7 @@ for (let key in arraysOfNumber){
 
 > push/pop are fast, while shift/unshift are slow , for the simple reason of more elements in arrays will need more time to shift and more opearation than just push and pop at last/top.
 
-```
+```javascript
 var data = [ "Z" ];
 data.push( "A" );
 data.push( "B", "C" );
@@ -343,7 +343,7 @@ console.log( data );
 > Push Data at End
 
 > ["Z", "A", "B", "C"]
-```
+```javascript
 var data = [ "Z" ];
 data.unshift( "A" );
 data.unshift( "B", "C" );
@@ -355,7 +355,7 @@ console.log( data );
 > ["B", "C", "A", "Z"]
 
 > C
-```
+```javascript
 var data = [ "A", "B", "C" ];
 console.log( data.pop() );
 console.log( "Pop Data" );
@@ -366,7 +366,7 @@ console.log( data );
 > ["A", "B"]
 
 > A
-```
+```javascript
 var data = [ "A", "B", "C" ];
 console.log( data.shift() );
 console.log( "Shift Data" );
@@ -381,47 +381,47 @@ console.log( data );
 #### Array Functions/Methods
 - Adding items
   - Mutative
-    ```
+    ```javascript
     list.push(X)            // list == [_,_,_,_,_,X]
     list.unshift(X)         // list == [X,_,_,_,_,_]
     list.splice(2, 0, X)    // list == [_,_,X,_,_,_]
     ```
   - Immutable
-    ```
+    ```javascript
     list.concat([X,Y])      // → [_,_,_,_,_,X,Y]
     ```
 - Subsets
   - Immutable 
-    ```
+    ```javascript
     list.slice(0,1)         // → [a        ]
     list.slice(1)           // → [  b,c,d,e]
     list.slice(1,2)         // → [  b      ]
     ```   
   - Mutative
-    ```
+    ```javascript
     list.slice(0,1)         // → [a        ]
     list.slice(1)           // → [  b,c,d,e]
     list.slice(1,2)         // → [  b      ]
     ```
 - Inserting
-```
+```javascript
 // after -- [_,_,REF,NEW,_,_]
 list.splice(list.indexOf(REF)+1, 0, NEW))
 // before -- [_,_,NEW,REF,_,_]
 list.splice(list.indexOf(REF), 0, NEW))
 ```
 - Replace items
-```
+```javascript
 list.splice(2, 1, X)    // list == [a,b,X,d,e]
 ```
 - Removing items
-```
+```javascript
 list.pop()              // → e    list == [a,b,c,d]
 list.shift()            // → a    list == [b,c,d,e]
 list.splice(2, 1)       // → [c]  list == [a,b,d,e]
 ```
 - Iterables
-```
+```javascript
 .filter(n => ...) => array
 .find(n => ...)  // es6
 .findIndex(...)  // es6
@@ -441,14 +441,14 @@ Let dig into few of frequently used one.
       > In splice ,**first** parameter defines the position where new elements should be **added** and 
       **second** parameter defines how many elements should be **removed** and rest parameters separated by **,**
       is considered as items to be **added**.
-      ```
+      ```javascript
       var data = ["1", "2", "3", "4"];
       data.splice(2, 1, "5", "6");
       ["1", "2", "5", "6", "4"]
       ```
       Here its will remove "3" (as zero-based indices) and add "5","6".
       Now  what if we don't give the anything after 2nd parameter then its will simply remove and add nothing.
-      ```
+      ```javascript
       var data = ["1", "2", "3", "4"];
       data.splice(2, 1);
       ["1", "2", "4"]
@@ -456,12 +456,14 @@ Let dig into few of frequently used one.
   - slice(Immutable Subsets)
 
       > It can have either 1 or 2 arguments and it selects array elements from the start argument(param 1), and up to (but not included) the end argument(param 2) and return only the items from start argument to end argument (excluding end argument).
-      ```
+      ```javascript
       var data = ["1", "2", "3", "4"];
       let newdata = data.slice(2, 3); //start from "3" but upto [3(end)-2(start)] = 1 )1 element.
       console.log(data); //["1", "2", "3", "4"]
       console.log(newdata); // ["3"]
-    
+      ```
+
+     ```javascript
       var data = ["1", "2", "3", "4"];
       data.slice(2); // start from "3" but upto no number mentioned then till end.
       ["3", "4"]
