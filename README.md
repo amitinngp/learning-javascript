@@ -375,7 +375,9 @@ console.log( data );
 > Shift Data at Front
 
 > ["B", "C"]
+
 **[⬆ back to top](#table-of-contents)**
+
 #### Array Functions/Methods
 - Adding items
   - Mutative
