@@ -433,7 +433,7 @@ Let dig into few of frequently used one.
 
 - splice  vs  slice
   - splice (used for Replace,Mutative Subsets ,Inserting and Removing items)
-  
+
       > In splice ,**first** parameter defines the position where new elements should be **added** and 
       **second** parameter defines how many elements should be **removed** and rest parameters separated by **,**
       is considered as items to be **added**.
@@ -454,10 +454,11 @@ Let dig into few of frequently used one.
       > It can have either 1 or 2 arguments and it selects array elements from the start argument(param 1), and up to (but not included) the end argument(param 2) and return only the items from start argument to end argument (excluding end argument).
       ```
       var data = ["1", "2", "3", "4"];
-      data.splice(2, 1); // start from "3" but upto 1 element.
-      ["3"]
-
-       var data = ["1", "2", "3", "4"];
-      data.splice(2); // start from "3" but upto no number mentioned then till end.
+      let newdata = data.slice(2, 3); //start from "3" but upto (3-2 =1 )1 element.
+      console.log(data); //["1", "2", "3", "4"]
+      console.log(newdata); // ["3"]
+    
+      var data = ["1", "2", "3", "4"];
+      data.slice(2); // start from "3" but upto no number mentioned then till end.
       ["3", "4"]
       ```

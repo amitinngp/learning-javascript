@@ -60,3 +60,27 @@ Shift Data at Front
 ["B", "C"]
 
 */
+ /* 
+Example 4 - splice vs slice in  Arrays
+properties of Array can be accessed similar to  object  and can be iterated similar to that of object
+for loop is similar to Example 5 in learn-object.js
+*/ 
+console.log("======splice======");
+var data = ["1", "2", "3", "4"];
+data.splice(2, 1, "5", "6");
+console.log(data);
+
+var data = ["1", "2", "3", "4"];
+data.splice(2, 1);
+console.log(data);
+
+console.log("======slice======");
+var data = ["1", "2", "3", "4"];
+let newdata = data.slice(2, 3); // start from "3" but upto (3-2 =1 )1 element.
+console.log(data);
+console.log(newdata);
+
+var data = ["1", "2", "3", "4"];
+let newdata1 = data.slice(2); // start from "3" but upto no number mentioned then till end.
+console.log(data);
+console.log(newdata1);
