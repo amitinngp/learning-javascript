@@ -16,7 +16,7 @@ Knowledge of javascripts basics
 - functions
 - Lexical scope,Execution context(Hoisting)
 
-## Table of Contents
+## [Table of Contents](#table-of-contents)
 
 1. [Objects](#objects)
 1. [Arrays](#arrays)
@@ -300,6 +300,8 @@ checkAccount = {
   name = 'Saving Acount'
 }
 ```
+**[⬆ back to top](#table-of-contents)**
+
 ### Arrays
 When we want object of ordered data items, then use Arrays.
 It means that Arrays is also an object but of ordered type, that means they are stored in memory in 
@@ -373,7 +375,7 @@ console.log( data );
 > Shift Data at Front
 
 > ["B", "C"]
-
+**[⬆ back to top](#table-of-contents)**
 #### Array Functions/Methods
 - Adding items
   - Mutative
@@ -462,3 +464,4 @@ Let dig into few of frequently used one.
       data.slice(2); // start from "3" but upto no number mentioned then till end.
       ["3", "4"]
       ```
+**[⬆ back to top](#table-of-contents)**
