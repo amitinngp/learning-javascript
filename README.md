@@ -373,3 +373,47 @@ console.log( data );
 > Shift Data at Front
 
 > ["B", "C"]
+
+#### Array Functions/Methods
+- Adding items
+  - Mutative
+    ```
+    list.push(X)            // list == [_,_,_,_,_,X]
+    list.unshift(X)         // list == [X,_,_,_,_,_]
+    list.splice(2, 0, X)    // list == [_,_,X,_,_,_]
+    ```
+  - Immutable
+    ```
+    list.concat([X,Y])      // → [_,_,_,_,_,X,Y]
+    ```
+- Inserting
+```
+// after -- [_,_,REF,NEW,_,_]
+list.splice(list.indexOf(REF)+1, 0, NEW))
+// before -- [_,_,NEW,REF,_,_]
+list.splice(list.indexOf(REF), 0, NEW))
+```
+- Replace items
+```
+list.splice(2, 1, X)    // list == [a,b,X,d,e]
+```
+- Removing items
+```
+list.pop()              // → e    list == [a,b,c,d]
+list.shift()            // → a    list == [b,c,d,e]
+list.splice(2, 1)       // → [c]  list == [a,b,d,e]
+```
+- Iterables
+```
+.filter(n => ...) => array
+.find(n => ...)  // es6
+.findIndex(...)  // es6
+.every(n => ...) => Boolean // ie9+
+.some(n => ..) => Boolean   // ie9+
+.map(n => ...)   // ie9+
+.reduce((total, n) => total) // ie9+
+.reduceRight(...)
+```
+more you can find at [devhints](https://devhints.io/js-array)
+
+Let dig into few of frequently used one.
