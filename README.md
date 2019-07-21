@@ -454,7 +454,7 @@ Let dig into few of frequently used one.
       > It can have either 1 or 2 arguments and it selects array elements from the start argument(param 1), and up to (but not included) the end argument(param 2) and return only the items from start argument to end argument (excluding end argument).
       ```
       var data = ["1", "2", "3", "4"];
-      let newdata = data.slice(2, 3); //start from "3" but upto (3-2 =1 )1 element.
+      let newdata = data.slice(2, 3); //start from "3" but upto [3(end)-2(start)] = 1 )1 element.
       console.log(data); //["1", "2", "3", "4"]
       console.log(newdata); // ["3"]
     
