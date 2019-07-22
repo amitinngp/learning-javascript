@@ -540,4 +540,4 @@ Let dig into few of frequently used one.
       =>  total += reducetechstack.score,0);
       console.log(totalscore);
     ``` 
-    reduce is more poweful then map and filter , we can implement map and filter using [reduce](https://medium.com/javascript-scene/reduce-composing-software-fe22f0c39a1d) 
+    **reduce** is more poweful then map and filter , we can implement map and filter using [reduce](https://medium.com/javascript-scene/reduce-composing-software-fe22f0c39a1d) 
