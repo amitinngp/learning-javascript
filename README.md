@@ -640,11 +640,14 @@ Let dig into few of frequently used one.
 ###  Arrow Functions 
 
   - what problem arrow function is solving
+
     Traditional functions can be used as
     - Constructors
     - Methods
     - Non-method functions
-      > As the function can play role of Constructors and Methods, they are  distinguised by **this** key-word, and has there own scope for **this** and that is the problem. As the **this** in callback function has its own scope and cannot be accessed by the outer function. There are others but this is the main probelm , arrow function is solving.
+
+    > As the function can play role of Constructors and Methods, they are  distinguised by **this** key-word, and has there own scope for **this** and that is the problem. As the **this** in callback function has its own scope and cannot be accessed by the outer function. There are others but this is the main probelm , arrow function is solving.
+    
     - There are varieties of syntaxes available in arrow functions
       - () => 2020  or _ => 2020
       - Single parameter [ e.g. x => 42  || (x) => 42]
