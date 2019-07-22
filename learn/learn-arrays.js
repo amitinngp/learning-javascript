@@ -124,3 +124,13 @@ var reducetechstack = [
   ];
   var passingMarks = filtertechstack.filter((filtertechstack) =>  filtertechstack.score >= 50);
   console.log(passingMarks); 
+ // reduce
+  var reducetechstack = [
+    { id: 1, name: 'javascript',score: 50 },
+    { id: 2, name: 'angular' ,score: 60},
+    { id: 3, name: 'spring' ,score: 70},
+    { id: 4, name: 'typescript' ,score: 40}
+  ];
+  var totalscore = reducetechstack.reduce((total ,reducetechstack) 
+  =>  total += reducetechstack.score,0);
+  console.log(totalscore);

@@ -75,7 +75,7 @@ Add below on scripts in package.json
 
 ### Getting started
 
-Understanding working of Javascripts underhood in Angular world.
+Understanding working of Javascripts underhood.
 
 ### Objects
 
@@ -541,3 +541,7 @@ Let dig into few of frequently used one.
       console.log(totalscore);
     ``` 
     **reduce** is more poweful then map and filter , we can implement map and filter using [reduce](https://medium.com/javascript-scene/reduce-composing-software-fe22f0c39a1d) 
+
+**[⬆ back to top](#table-of-contents)**    
+
+### Destructuring    
