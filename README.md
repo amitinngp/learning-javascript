@@ -274,9 +274,9 @@ let UserAccount = function(){
     accountNumber,
     };
 }
-console.log(UserAccount().name1);
+console.log(UserAccount().name);
 ```
-Internally its a key-value pair with same value , like **name:name** or **accountNumber:accountNumber**
+Internally its a key-value pair with same value , like **[name:name](#keyvalue)** or **accountNumber:accountNumber**
 
 - To iterate over an object key
 ```javascript
@@ -324,7 +324,7 @@ for (let key in arraysOfNumber){
  ```
  We can use an array as a deque with the following operations:
 - To end
-  - push(...items) adds items to the end.
+  - [push](#array-push)(...items) adds items to the end.
   - pop() removes the element from the end and returns it.
 - To Front  
   - shift() removes the element from the beginning and returns it.
@@ -358,7 +358,7 @@ console.log( data );
 ```javascript
 var data = [ "A", "B", "C" ];
 console.log( data.pop() );
-console.log( "Pop Data" );
+console.log( "Pop Data at End" );
 console.log( data );
 ```
 > Pop Data at End
@@ -369,7 +369,7 @@ console.log( data );
 ```javascript
 var data = [ "A", "B", "C" ];
 console.log( data.shift() );
-console.log( "Shift Data" );
+console.log( "Shift Data at Front" );
 console.log( data );
 ```
 > Shift Data at Front
@@ -435,7 +435,7 @@ more you can find at [devhints](https://devhints.io/js-array)
 
 Let dig into few of frequently used one.
 
-- splice  vs  slice
+- [splice  vs  slice](#splice-slice)
   - splice (used for Replace,Mutative Subsets ,Inserting and Removing items)
 
       > In splice ,**first** parameter defines the position where new elements should be **added** and 
@@ -469,3 +469,74 @@ Let dig into few of frequently used one.
       ["3", "4"]
       ```
 **[⬆ back to top](#table-of-contents)**
+- **Notes**
+  - Use [Array push](#array-push) insteadof direct assignment to add items to an array.
+  - Use array spreads **...** to copy arrays .e.g. 
+    ```javascript 
+    const itemsCopy = [...items]; 
+    ```
+  - To convert an iterable object to an array, use spreads ... instead of Array.from
+    ```javascript 
+    // good
+    const nodes = Array.from(foo);
+
+    // best
+    const nodes = [...foo]; 
+    ```
+  - Use Array.from for converting an array-like object to an array.
+    ```javascript 
+    const arrLike = { 0: 'foo', 1: 'bar', 2: 'baz', length: 3 };
+    // bad
+    const badarray = Array.prototype.slice.call(arrLike);
+
+    // good
+    const goodarray = Array.from(arrLike);
+    ```
+  - Use Array.from instead of spread ... for mapping over iterables, because it avoids creating an intermediate array.
+    ```javascript 
+    // bad
+    const bad = [...foo].map(bar);
+
+    // good
+    const good = Array.from(foo, bar);
+    ```
+- [map vs reduce vs filter](#map-reduce-filter) **[array of same length vs single computed value  vs filtered array of same or less length]**
+  - map [ To fetch computed or part of same array resulting with same length.]
+    ```javascript
+    const numbers = [2, 4, 8, 10];
+    const double = numbers.map(function(x){ return x * 2;}); 
+    //or with arrow function we will see that later
+    const double = numbers.map(x => x * 2);
+    [4, 8, 16, 20]
+    //or 
+    var techstack = [
+      { id: 1, name: 'javascript' },
+      { id: 2, name: 'angular' },
+      { id: 3, name: 'spring' },
+      { id: 4, name: 'typescript' }
+    ];
+    techstack.map(techstack => techstack.name)
+    ```
+  - reduce [single computed value for every item in array resulting less in length]
+    ```javascript
+    var reducetechstack = [
+        { id: 1, name: 'javascript',score: 50 },
+        { id: 2, name: 'angular' ,score: 60},
+        { id: 3, name: 'spring' ,score: 70},
+        { id: 4, name: 'typescript' ,score: 40}
+      ];
+      var totalscore = reducetechstack.reduce((total ,reducetechstack) 
+      =>  total += reducetechstack.score,0);
+      console.log(totalscore);
+    ```
+  - filter[filtered array of same or less length]
+    ```javascript
+    var filtertechstack = [
+      { id: 1, name: 'javascript',score: 50 },
+      { id: 2, name: 'angular' ,score: 60},
+      { id: 3, name: 'spring' ,score: 70}, 
+      { id: 4, name: 'typescript' ,score: 40}
+    ];
+    var passingMarks = filtertechstack.filter((filtertechstack) =>  filtertechstack.score >= 50);
+    console.log(passingMarks); 
+    ```

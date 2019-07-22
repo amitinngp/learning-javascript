@@ -20,7 +20,6 @@ for (let key in arraysOfNumber){
  /* 
 Example 3  Push/Pop and Shift/Unshift in  Arrays
 properties of Array can be accessed similar to  object  and can be iterated similar to that of object
-for loop is similar to Example 5 in learn-object.js
 */ 
 
 var data = [ "Z" ];
@@ -62,8 +61,6 @@ Shift Data at Front
 */
  /* 
 Example 4 - splice vs slice in  Arrays
-properties of Array can be accessed similar to  object  and can be iterated similar to that of object
-for loop is similar to Example 5 in learn-object.js
 */ 
 console.log("======splice======");
 var data = ["1", "2", "3", "4"];
@@ -84,3 +81,46 @@ var data = ["1", "2", "3", "4"];
 let newdata1 = data.slice(2); // start from "3" but upto no number mentioned then till end.
 console.log(data);
 console.log(newdata1);
+
+
+ /* 
+Example 5 - map vs reduce vs filter in  Arrays
+map - to fetch computed value for every item in array,so that a new array having only values of required keys [ here for name] resulting with same length. 
+reduce - single computed value for every item in array resulting same or less in length.
+filter - filtered array of same or less length
+*/ 
+
+//map()
+const numbers = [2, 4, 8, 10];
+const double = numbers.map(function(x){ return x * 2;}); 
+console.log(double);
+//or with arrow function we will see that later
+const double1 = numbers.map(x => x * 2);
+console.log(double1);
+var techstack = [
+    { id: 1, name: 'javascript' },
+    { id: 2, name: 'angular' },
+    { id: 3, name: 'spring' },
+    { id: 4, name: 'typescript' }
+  ];
+  const names = techstack.map(techstack => techstack.name)
+  console.log(names);
+
+//reduce
+var reducetechstack = [
+    { id: 1, name: 'javascript',score: 50 },
+    { id: 2, name: 'angular' ,score: 60},
+    { id: 3, name: 'spring' ,score: 70},
+    { id: 4, name: 'typescript' ,score: 40}
+  ];
+  var totalscore = reducetechstack.reduce((total ,reducetechstack)=>  total += reducetechstack.score,0);
+  console.log(totalscore);
+  //filter
+  var filtertechstack = [
+    { id: 1, name: 'javascript',score: 50 },
+    { id: 2, name: 'angular' ,score: 60},
+    { id: 3, name: 'spring' ,score: 70}, 
+    { id: 4, name: 'typescript' ,score: 40}
+  ];
+  var passingMarks = filtertechstack.filter((filtertechstack) =>  filtertechstack.score >= 50);
+  console.log(passingMarks); 
