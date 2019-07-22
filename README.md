@@ -545,7 +545,9 @@ Let dig into few of frequently used one.
 **[⬆ back to top](#table-of-contents)**    
 
 ### Destructuring
-- Destructuring assignment allows for instantly mapping an object or array onto many variables
+- Destructuring assignment allows for instantly mapping an object or array or any iterable onto many variables.
+
+- Object Destructuring
 
   lets understand what the above sentance means.
   - Use of Let or () 
@@ -592,12 +594,43 @@ Let dig into few of frequently used one.
                 score: 50 
                 }
     ```
-  Here 'score' #3 has the same key-value pairs name ,but the **name:fullname**  has different key-value pairs name. So if we want to check the value of **name:** at #1. we can do by **'fullname'** and not the name.
+  Here 'score' #3 has the same key-value pairs name ,but the **name:fullname**  has different key-value pairs name. So if we want to print the value of **name:** at #1. we can do by **'fullname'** and not the **name** key.
 
     ```javascript
+      console.log(name); // no key
       console.log(fullname); // javascript   
-    ```
-Now this is how assigment is done, also as we understand that both side we have object, and we need a scope for the left hand side Object, and that why we use the **let** keyword or **()** , so that left hand side anonymous Object can pollute the global space.
+    ``` 
+    - Assignment is done based on the key match at both side, so no mater how much depth it has ,if matches key matches we can have its value.
+    - Also as we understand that both side we have object, and we need a scope for the left hand side Object, and that why we use the **let** keyword or **()** , so that left hand side anonymous Object can pollute the global space.
 
-- Array 
-    
+- Array Destructuring
+  - we aleady  see that arrays are objects ans its iterable, so same thing is applicable to arrays also.
+      ```javascript
+      let [firstName,lastName] = ["John", "Doe"];
+      console.log({firstName,lastName}); 
+      ```
+   - We can skip few items by using **,** operator.
+      ```javascript
+        let [firstName,,lastName] = ["John", "Middle Name","Doe"];
+        console.log({firstName,lastName}); 
+      ``` 
+   - We can assign default values and mapping is done based on comma  separated
+      ```javascript
+      const [red = 255, green, blue = 255] = [120]; // its will take fitrst item .
+      console.log(`R: ${red}, G: ${green}, B: ${blue}`); // R: 120, G: undefined, B: 255
+      ```
+    - Order of key does matters when its an Array while not in case of Object.
+      ```javascript
+        const [red = 255, green, blue = 255] = [120]; // its will take fitrst item .
+        console.log(`R: ${red}, G: ${green}, B: ${blue}`); // R: 120, G: undefined, B: 255
+
+        let [firstName,lastName] = [{lastName : "Doe"},{firstName : "John"}];
+        console.log({firstName,lastName});//firstName: {lastName2: "Doe"}
+                                          //lastName: {firstName2: "John"}                                
+      ```
+    - Assigning the rest of an array to a variable
+      ```javascript
+      var [a, ...b] = [1, 2, 3];
+        console.log(a); // 1
+        console.log(b); // [2, 3] 
+      ```  

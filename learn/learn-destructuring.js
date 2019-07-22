@@ -41,29 +41,17 @@ for(let key of Object.keys(person)){
      }
      
 }
-
 console.log(`I am ${fullname} from ${place} and I am ${years} years old.`);
 
-let {height, width, title} = { title: "Menu", height: 200, width: 100 }
-console.log(`I am ${title} from ${height} and I am ${width} years old.`);
+  let [firstName,lastName] = ["John", "Doe"];
+  console.log({firstName,lastName}) 
 
-let options = {
-    size: {
-      width: 100,
-      height: 200
-    },
-    items: ["Cake", "Donut"],
-    extra: true    // something extra that we will not destruct
-  };
+  let [firstName1,,lastName1] = ["John", "Middle Name","Doe"];
+  console.log({firstName1,lastName1}); 
 
-  //let { size } = options; 
-  let { size:size } = options; 
-  console.log(size);//value part of printed here means second part in  size:size of key -value pairs.
-  //let { size:fullsize } = options;
-  //console.log(size); // what i am taking is value not key. so this will give error.
-  //console.log(fullsize);
+  
+   const [red = 255, green, blue = 255] = [120]; // its will take fitrst item .
+   console.log(`R: ${red}, G: ${green}, B: ${blue}`); // R: 120, G: undefined, B: 255
 
-  //Key should match , order does not matter and does not matter how deep key is in object. 
-  //
-
-  //Default value
+   let [firstName2,lastName2] = [{lastName2 : "Doe"},{firstName2 : "John"}];
+        console.log({firstName2,lastName2}); 
