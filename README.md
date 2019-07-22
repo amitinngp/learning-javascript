@@ -571,7 +571,7 @@ Let dig into few of frequently used one.
     ```
     Now  as **key** of #1 **name:name** at left should match to key  of #2 **name:'javascript'** in right side then **value**  of #2 right side **'javascript'** is assinged to **value** of #1 left side **name**.
     So now as we know if the key and value has the same name in Object (See [Property value shorthand](#shorthand))
-    it can be written as inleft hand side. 
+    it can be written as in left hand side below. 
     ```javascript
     let {
             name, //#1 - key:value
@@ -582,7 +582,7 @@ Let dig into few of frequently used one.
                 }
        console.log(name); // javascript        
     ```
-    but here **key** is not printed its the **value** is getting printed. To understand this let us see the next example.
+    but rember here **key** is not passed to printed , its the **value** is passed to printed. To understand this let us see the next example.
     ```javascript
     let {
             name:fullname, //#1 - key:value
