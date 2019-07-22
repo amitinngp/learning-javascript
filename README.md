@@ -2,7 +2,7 @@
 
 ## Prerequisites
 
-Knowledge of javascripts basics
+Knowledge of javaScripts basics
 
 - "use strict"
 - Variables
@@ -85,7 +85,7 @@ Objects in javascripts , let see the example and then deep dive into it.
 
 > var person = new Object(); // not very common
 
-Object is a collection of **key : value** pairs and can inititalized using keyword **new** Object() or by using object literal **{}**
+Object is a collection of **key : value** pairs and can initialized using keyword **new** Object() or by using object literal **{}**
 
 Key : value pairs can be any combination of key with:
 
@@ -297,7 +297,7 @@ console.log(checkAccount.accountNumber);
 It wil give error,only if we try to set value of object itself
 ```javascript
 checkAccount = {
-  name = 'Saving Acount'
+  name = 'Saving Account'
 }
 ```
 **[⬆ back to top](#table-of-contents)**
@@ -470,7 +470,7 @@ Let dig into few of frequently used one.
       ```
 **[⬆ back to top](#table-of-contents)**
 - **Notes**
-  - Use [Array push](#array-push) insteadof direct assignment to add items to an array.
+  - Use [Array push](#array-push) instead of direct assignment to add items to an array.
   - Use array spreads **...** to copy arrays .e.g. 
     ```javascript 
     const itemsCopy = [...items]; 
@@ -549,7 +549,7 @@ Let dig into few of frequently used one.
 
 - Object Destructuring
 
-  lets understand what the above sentance means.
+  lets understand what the above sentence means.
   - Use of Let or () 
   ```javascript
   let {var1, var2} = { id: 1, name: 'javascript',score: 50 }
@@ -561,7 +561,7 @@ Let dig into few of frequently used one.
     let {name, score} = { id: 1, name: 'javascript',score: 50 }
     ```
     we are doing assignment of Object **{id: 1, name: 'javascript',score: 50 }** to Object **{name, score}**.
-    Here in left hand side Object {name, score} will iterate over the **keys** available in right side bject { id: 1, name: 'javascript',score: 50 }, and if any match found then the corresponding values of that key of right side Object is assigned to value of left Object's matching key.Let us understand this, Above can be written as
+    Here in left hand side Object {name, score} will iterate over the **keys** available in right side object { id: 1, name: 'javascript',score: 50 }, and if any match found then the corresponding values of that key of right side Object is assigned to value of left Object's matching key.Let us understand this, Above can be written as
     ```javascript
       let {
         name:name, //#1 - key:value
@@ -571,7 +571,7 @@ Let dig into few of frequently used one.
             score: 50 
             }
     ```
-    Now  as **key** of #1 **name:name** at left should match to key  of #2 **name:'javascript'** in right side then **value**  of #2 right side **'javascript'** is assinged to **value** of #1 left side **name**.
+    Now  as **key** of #1 **name:name** at left should match to key  of #2 **name:'javascript'** in right side then **value**  of #2 right side **'javascript'** is assigned to **value** of #1 left side **name**.
     So now as we know if the key and value has the same name in Object (See [Property value shorthand](#shorthand))
     it can be written as in left hand side below. 
     ```javascript
@@ -584,7 +584,7 @@ Let dig into few of frequently used one.
                 }
        console.log(name); // javascript        
     ```
-    but rember here **key** is not passed to printed , its the **value** is passed to printed. To understand this let us see the next example.
+    but remember here **key** is not passed to printed , its the **value** is passed to printed. To understand this let us see the next example.
     ```javascript
     let {
             name:fullname, //#1 - key:value
@@ -604,7 +604,7 @@ Let dig into few of frequently used one.
     - Also as we understand that both side we have object, and we need a scope for the left hand side Object, and that why we use the **let** keyword or **()** , so that left hand side anonymous Object can pollute the global space.
 
 - Array Destructuring
-  - we aleady  see that arrays are objects ans its iterable, so same thing is applicable to arrays also.
+  - we already  see that arrays are objects ans its iterable, so same thing is applicable to arrays also.
       ```javascript
       let [firstName,lastName] = ["John", "Doe"];
       console.log({firstName,lastName}); 
@@ -616,12 +616,12 @@ Let dig into few of frequently used one.
       ``` 
    - We can assign default values and mapping is done based on comma  separated
       ```javascript
-      const [red = 255, green, blue = 255] = [120]; // its will take fitrst item .
+      const [red = 255, green, blue = 255] = [120]; // its will take first item .
       console.log(`R: ${red}, G: ${green}, B: ${blue}`); // R: 120, G: undefined, B: 255
       ```
     - Order of key does matters when its an Array while not in case of Object.
       ```javascript
-        const [red = 255, green, blue = 255] = [120]; // its will take fitrst item .
+        const [red = 255, green, blue = 255] = [120]; // its will take first item .
         console.log(`R: ${red}, G: ${green}, B: ${blue}`); // R: 120, G: undefined, B: 255
 
         let [firstName,lastName] = [{lastName : "Doe"},{firstName : "John"}];
@@ -646,7 +646,7 @@ Let dig into few of frequently used one.
     - Methods
     - Non-method functions
 
-  > As the function can play role of Constructors and Methods, they are  distinguised by **this** key-word, and has there own scope for **this** and that is the problem. As the **this** in callback function has its own scope and cannot be accessed by the outer function. There are others but this is the main probelm , arrow function is solving.
+  > As the function can play role of Constructors and Methods, they are  distinguished by **this** key-word, and has there own scope for **this** and that is the problem. As the **this** in callback function has its own scope and cannot be accessed by the outer function. There are others but this is the main problem , arrow function is solving.
 
 - There are varieties of syntaxes available in arrow functions
   - () => 2020  or _ => 2020
@@ -703,7 +703,7 @@ Let dig into few of frequently used one.
  ### Classes & Interface
 
  - Classes (most debatable part of javascript) , so what is class?
-  >  Let us  first undersatand why we need the class?
+  >  Let us  first understand why we need the class?
 
      Basically to get ourself out from this situation. 
      - Want to creating multiple new instances.
@@ -715,7 +715,7 @@ Let dig into few of frequently used one.
      The Object is generated in javascript using {} called plain (literal) objects. 
      so if we need one we can simply use curly braces {} syntax.Is there other way to create a Object in javascript.Yes using construtor function and using Class keyword.Whatttt ? what is constructor function.
 
-  - Constructor functions technically are regular functions, which satify the two condition:
+  - Constructor functions technically are regular functions, which satisfy the two condition:
       - They are named with capital letter first. e.g. Users
       - They should be executed only with "new" operator. to call this function we use **new functionName()** instead of just old plain call like functionName();
       ```javascript
@@ -744,11 +744,11 @@ Let dig into few of frequently used one.
           isAdmin: false
         };
       ```
-    >  From above take away about class is , Two types of Object exists in javascripts :- 
+    >  From above take away about class is , Two types of Object exists in javaScripts :- 
       - **Plain objects**( you may call it just 'Object') are objects that are instances of Object class,created via {}.
       - **Class** objects are instances of classes with own defined constructor, properties and methods, created via **new** constructor function.
 
-      Behind the scence a powerful thing is acting and that is called prototype.Same thing can be written as  
+      Behind the scene a powerful thing is acting and that is called prototype.Same thing can be written as  
       ```javascript
         function User(name) {
           this.name = name;
@@ -761,4 +761,3 @@ Let dig into few of frequently used one.
         user.sayHi();
       ```
       for more on [Objects, Prototypes and Classes in JavaScript](https://alligator.io/js/objects-prototypes-classes/)
-      
