@@ -646,8 +646,8 @@ Let dig into few of frequently used one.
     - Methods
     - Non-method functions
 
-    > As the function can play role of Constructors and Methods, they are  distinguised by **this** key-word, and has there own scope for **this** and that is the problem. As the **this** in callback function has its own scope and cannot be accessed by the outer function. There are others but this is the main probelm , arrow function is solving.
-    
+  > As the function can play role of Constructors and Methods, they are  distinguised by **this** key-word, and has there own scope for **this** and that is the problem. As the **this** in callback function has its own scope and cannot be accessed by the outer function. There are others but this is the main probelm , arrow function is solving.
+
     - There are varieties of syntaxes available in arrow functions
       - () => 2020  or _ => 2020
       - Single parameter [ e.g. x => 42  || (x) => 42]
@@ -659,13 +659,40 @@ Let dig into few of frequently used one.
         x =>({ y: x })
         ```
       - **Arrow functions shine best with anything that requires this to be bound to the context, and not the function itself**.
-       ```javascript
-       var multiply = function(x, y) {
-          return x * y;
-        };
-        // can be written as
-        var multiply = (x, y) => { return x * y; };
-        //or 
-        var multiply = (x, y) => x * y;
+        ```javascript
+        var multiply = function(x, y) {
+            return x * y;
+          };
+          // can be written as
+          var multiply = (x, y) => { return x * y; };
+          //or 
+          var multiply = (x, y) => x * y;
+        ```
+**[⬆ back to top](#table-of-contents)** 
 
-       ```
+### Data Types
+      Map – is a collection of keyed values.
+
+  - Methods and properties:
+
+    - new Map([iterable]) – creates the map, with optional iterable (e.g. array) of [key,value] pairs for    initialization.
+    - map.set(key, value) – stores the value by the key.
+    - map.get(key) – returns the value by the key, undefined if key doesn’t exist in map.
+    - map.has(key) – returns true if the key exists, false otherwise.
+    - map.delete(key) – removes the value by the key.
+    - map.clear() – removes everything from the map.
+    - map.size – returns the current element count.
+    - The differences from a regular Object:
+
+  - Any keys, objects can be keys.
+  - Additional convenient methods, the size property.
+  - Set – is a collection of unique values.
+
+- Methods and properties:
+
+ - new Set([iterable]) – creates the set, with optional iterable (e.g. array) of values for initialization.
+ - set.add(value) – adds a value (does nothing if value exists), returns the set itself.
+ - set.delete(value) – removes the value, returns true if value existed at the moment of the call, otherwise false.
+ - set.has(value) – returns true if the value exists in the set, otherwise false.
+ - set.clear() – removes everything from the set.
+ - set.size – is the elements count.
