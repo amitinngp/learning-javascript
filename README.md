@@ -813,37 +813,32 @@ More you can find [here](https://www.freecodecamp.org/news/js-type-coercion-expl
     ```
   - Generators are iterable
    - using next()
-    ```javascript
-      function* generateSequence() {
-          yield 1;
-          yield 2;
-          return 3;
+      ```javascript
+        function* generateSequence() {
+            yield 1;
+            yield 2;
+            return 3;
+          }
+        let generator = generateSequence();
+        for(let value of generator) {
+          console.log(value); // 1, then 2
         }
-      let generator = generateSequence();
-  
-      for(let value of generator) {
-        console.log(value); // 1, then 2
-      }
-    ```
-    Wait what happened to 3 ,It’s because for-of iteration ignores the last value, when done: true. So, if we want all results to be shown by for..of, we must return them with yield
+      ```
+      Wait what happened to 3 ,It’s because for-of iteration ignores the last value, when done: true. So, 
+      if we want all results to be shown by for..of, we must return them with yield
+
+      ```javascript
+        function* generateSequence() {
+            yield 1;
+            yield 2;
+            return 3;
+          }
+        let generator = generateSequence();
     
-    ```javascript
-      function* generateSequence() {
-          yield 1;
-          yield 2;
-          return 3;
+        for(let value of generator) {
+          console.log(value); // 1, then 2
         }
-      let sequence = [0, ...generateSequence()];
-      console.log(sequence); // 0, 1, 2, 3
-      //or
-      function* generateSequence(start, end) {
-        for (let i = start; i <= end; i++) {
-          yield i;
-        }
-      }
-      let sequence = [...generateSequence(0,3)];
-      console.log(sequence); // 0, 1, 2, 3
-    ```
+      ```
 
   generateSequence() turns the iterable into array of items.
 
