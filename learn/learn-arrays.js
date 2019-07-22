@@ -1,3 +1,4 @@
+(function(){
 /* 
 Example 1  Array is  Object 
 properties of Array can be accessed similar to  object  
@@ -131,6 +132,8 @@ var reducetechstack = [
     { id: 3, name: 'spring' ,score: 70},
     { id: 4, name: 'typescript' ,score: 40}
   ];
-  var totalscore = reducetechstack.reduce((total ,reducetechstack) 
-  =>  total += reducetechstack.score,0);
+  var totalscore = reducetechstack.reduce((total ,reducetechstack) =>  total += reducetechstack.score,0);
   console.log(totalscore);
+})()
+
+

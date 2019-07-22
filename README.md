@@ -702,4 +702,63 @@ Let dig into few of frequently used one.
 
  ### Classes & Interface
 
- - Classes
+ - Classes (most debatable part of javascript) , so what is class?
+  >  Let us  first undersatand why we need the class?
+
+     Basically to get ourself out from this situation. 
+     - Want to creating multiple new instances.
+     - Want to implement inheritance pattern.
+     - Want to create a Singleton Object.
+
+  > How to achieve create an Object in Javascript?
+
+     The Object is generated in javascript using {} called plain (literal) objects. 
+     so if we need one we can simply use curly braces {} syntax.Is there other way to create a Object in javascript.Yes using construtor function and using Class keyword.Whatttt ? what is constructor function.
+
+  - Constructor functions technically are regular functions, which satify the two condition:
+      - They are named with capital letter first. e.g. Users
+      - They should be executed only with "new" operator. to call this function we use **new functionName()** instead of just old plain call like functionName();
+      ```javascript
+              function User(name) {
+                this.name = name;
+                this.isAdmin = false;
+              }
+            let user = new User("John");
+      ```
+      In other words, new User(...) does something like:
+      ```javascript
+      function User(name) {
+          // this = {};  (implicitly) //because of "this" we are able multiple instance.and each instance is new  "this" (a blank object) with value provided to it.
+
+          // add properties to this
+          this.name = name;
+          this.isAdmin = false;
+
+          // return this;  (implicitly)
+        }
+      ```
+      So the result of new User("Adam") is the same object as:
+      ```javascript
+        let user = {
+          name: "Adam",
+          isAdmin: false
+        };
+      ```
+    >  From above take away about class is , Two types of Object exists in javascripts :- 
+      - **Plain objects**( you may call it just 'Object') are objects that are instances of Object class,created via {}.
+      - **Class** objects are instances of classes with own defined constructor, properties and methods, created via **new** constructor function.
+
+      Behind the scence a powerful thing is acting and that is called prototype.Same thing can be written as  
+      ```javascript
+        function User(name) {
+          this.name = name;
+        }
+
+        User.prototype.sayHi = function() {
+          this.name
+        };
+        let user = new User("John");
+        user.sayHi();
+      ```
+      for more on [Objects, Prototypes and Classes in JavaScript](https://alligator.io/js/objects-prototypes-classes/)
+      
