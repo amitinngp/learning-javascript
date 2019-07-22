@@ -23,7 +23,7 @@ Knowledge of javascripts basics
 1. [Destructuring](#destructuring)
 1. [Arrow Functions](#arrow-functions)
 1. [Data Types](#data-types)
-1. [Classes & Constructors](#classes--constructors)
+1. [Classes & Interface](#classes--interface)
 1. [Type Casting & Coercion](#type-casting--coercion)
 1. [Iterators and Generators](#iterators-and-generators)
 1. [Objects Properties](#object-properties)
@@ -696,3 +696,8 @@ Let dig into few of frequently used one.
  - set.has(value) – returns true if the value exists in the set, otherwise false.
  - set.clear() – removes everything from the set.
  - set.size – is the elements count.
+
+
+**[⬆ back to top](#table-of-contents)**
+
+ ### Classes & Interface
