@@ -592,7 +592,7 @@ Let dig into few of frequently used one.
                 score: 50 
                 }
     ```
-  Here 'score' #3 has the same key-value pairs name ,but the **name:fullname**  has different key-value pairs name. So if we want to check the value of **name:**at #1. we can do by **'fullname'** and not the name.
+  Here 'score' #3 has the same key-value pairs name ,but the **name:fullname**  has different key-value pairs name. So if we want to check the value of **name:** at #1. we can do by **'fullname'** and not the name.
 
     ```javascript
       console.log(fullname); // javascript   
