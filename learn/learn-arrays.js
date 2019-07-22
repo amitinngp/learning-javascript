@@ -86,8 +86,8 @@ console.log(newdata1);
  /* 
 Example 5 - map vs reduce vs filter in  Arrays
 map - to fetch computed value for every item in array,so that a new array having only values of required keys [ here for name] resulting with same length. 
-reduce - single computed value for every item in array resulting same or less in length.
-filter - filtered array of same or less length
+reduce - single computed value for every item in array.
+filter - filtered new array with all elements that pass the test 
 */ 
 
 //map()

@@ -517,19 +517,7 @@ Let dig into few of frequently used one.
     ];
     techstack.map(techstack => techstack.name)
     ```
-  - reduce [single computed value for every item in array resulting less in length]
-    ```javascript
-    var reducetechstack = [
-        { id: 1, name: 'javascript',score: 50 },
-        { id: 2, name: 'angular' ,score: 60},
-        { id: 3, name: 'spring' ,score: 70},
-        { id: 4, name: 'typescript' ,score: 40}
-      ];
-      var totalscore = reducetechstack.reduce((total ,reducetechstack) 
-      =>  total += reducetechstack.score,0);
-      console.log(totalscore);
-    ```
-  - filter[filtered array of same or less length]
+  - filter[filtered new array with all elements that pass the test]
     ```javascript
     var filtertechstack = [
       { id: 1, name: 'javascript',score: 50 },
@@ -540,3 +528,16 @@ Let dig into few of frequently used one.
     var passingMarks = filtertechstack.filter((filtertechstack) =>  filtertechstack.score >= 50);
     console.log(passingMarks); 
     ```
+   - reduce [ new array/item with computed value for every item in original array ,against an accumulator[here total]]
+    ```javascript
+    var reducetechstack = [
+        { id: 1, name: 'javascript',score: 50 },
+        { id: 2, name: 'angular' ,score: 60},
+        { id: 3, name: 'spring' ,score: 70},
+        { id: 4, name: 'typescript' ,score: 40}
+      ];
+      var totalscore = reducetechstack.reduce((total ,reducetechstack) 
+      =>  total += reducetechstack.score,0);
+      console.log(totalscore);
+    ``` 
+    reduce is more poweful then map and filter , we can implement map and filter using [reduce](https://medium.com/javascript-scene/reduce-composing-software-fe22f0c39a1d) 
