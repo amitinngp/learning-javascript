@@ -648,26 +648,26 @@ Let dig into few of frequently used one.
 
   > As the function can play role of Constructors and Methods, they are  distinguised by **this** key-word, and has there own scope for **this** and that is the problem. As the **this** in callback function has its own scope and cannot be accessed by the outer function. There are others but this is the main probelm , arrow function is solving.
 
-    - There are varieties of syntaxes available in arrow functions
-      - () => 2020  or _ => 2020
-      - Single parameter [ e.g. x => 42  || (x) => 42]
-      - Multiple parameters
-        - (x, y) => 70
-      - With the arrow function, it is important to remember that statements need to have curly braces. Once the    curly braces are present, you always need to write **return** as well .
-      - If you are returning an object literal, it needs to be wrapped in parentheses
-        ```javascript
-        x =>({ y: x })
-        ```
-      - **Arrow functions shine best with anything that requires this to be bound to the context, and not the function itself**.
-        ```javascript
-        var multiply = function(x, y) {
-            return x * y;
-          };
-          // can be written as
-          var multiply = (x, y) => { return x * y; };
-          //or 
-          var multiply = (x, y) => x * y;
-        ```
+- There are varieties of syntaxes available in arrow functions
+  - () => 2020  or _ => 2020
+  - Single parameter [ e.g. x => 42  || (x) => 42]
+  - Multiple parameters
+    - (x, y) => 70
+  - With the arrow function, it is important to remember that statements need to have curly braces. Once the    curly braces are present, you always need to write **return** as well .
+  - If you are returning an object literal, it needs to be wrapped in parentheses
+    ```javascript
+      x =>({ y: x })
+    ```
+  - **Arrow functions shine best with anything that requires this to be bound to the context, and not the function itself**.
+    ```javascript
+    var multiply = function(x, y) {
+        return x * y;
+      };
+      // can be written as
+      var multiply = (x, y) => { return x * y; };
+      //or 
+      var multiply = (x, y) => x * y;
+    ```
 **[⬆ back to top](#table-of-contents)** 
 
 ### Data Types
