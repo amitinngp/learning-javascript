@@ -569,7 +569,7 @@ Let dig into few of frequently used one.
             score: 50 
             }
     ```
-    Now  as <font color="red">key </font> of #1 <font color="red">name:</font><font color="green">name</font> at left should match to <font color="red">key </font> of #2 <font color="red">name:</font><font color="green">'javascript'</font> in right side then <font color="green">value</font>  of #2 right side<font color="green">'javascript'</font> is assinged to <font color="green">value</font> of #1 left side <font color="green">name</font>.
+    Now  as **key** of #1 **name:name** at left should match to key  of #2 **name:'javascript'** in right side then **value**  of #2 right side **'javascript'** is assinged to **value** of #1 left side **name**.
     So now as we know if the key and value has the same name in Object (See [Property value shorthand](#shorthand))
     it can be written as inleft hand side. 
     ```javascript
@@ -582,7 +582,7 @@ Let dig into few of frequently used one.
                 }
        console.log(name); // javascript        
     ```
-    but here <font color="red">key </font> is not printed its the <font color="green">value</font>  is getting printed. To understand this let us see the next example.
+    but here **key** is not printed its the **value** is getting printed. To understand this let us see the next example.
     ```javascript
     let {
             name:fullname, //#1 - key:value
@@ -592,7 +592,7 @@ Let dig into few of frequently used one.
                 score: 50 
                 }
     ```
-  Here 'score' #3 has the same key-value pairs name ,but the <font color="red">name:</font><font color="green">fullname</font> has different key-value pairs name. So if we want to check the <font color="green">value</font> of <font color="red">name:</font> at #1. we can do by 'fullname' and not the name.
+  Here 'score' #3 has the same key-value pairs name ,but the **name:fullname**  has different key-value pairs name. So if we want to check the value of **name:**at #1. we can do by **'fullname'** and not the name.
 
     ```javascript
       console.log(fullname); // javascript   
