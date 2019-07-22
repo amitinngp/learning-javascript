@@ -251,7 +251,7 @@ const pageModel = {
  ```
 Even though we don't have CurrentAccount() and SavingAccount() in PersonAccount object at first, we generated it on fly based on computed values. it can go more compelx.
 
-- Property value shorthand
+- [Property value shorthand](#shorthand)
 When we use both key and properties name with same value it can be written shorthand.
 ```javascript
 const name = "CurrentAccount";
@@ -544,4 +544,60 @@ Let dig into few of frequently used one.
 
 **[⬆ back to top](#table-of-contents)**    
 
-### Destructuring    
+### Destructuring
+- Destructuring assignment allows for instantly mapping an object or array onto many variables
+
+  lets understand what the above sentance means.
+  - Use of Let or () 
+  ```javascript
+  let {var1, var2} = { id: 1, name: 'javascript',score: 50 }
+   //or 
+   ({var1, var2} = { id: 1, name: 'javascript',score: 50 })
+  ```
+   let us understand the first statement
+   ```javascript 
+    let {name, score} = { id: 1, name: 'javascript',score: 50 }
+    ```
+    we are doing assignment of Object **{id: 1, name: 'javascript',score: 50 }** to Object **{name, score}**.
+    Here in left hand side Object {name, score} will iterate over the **keys** available in right side bject { id: 1, name: 'javascript',score: 50 }, and if any match found then the corresponding values of that key of right side Object is assigned to value of left Object's matching key.Let us understand this, Above can be written as
+    ```javascript
+      let {
+        name:name, //#1 - key:value
+        score:score 
+      } = { id: 1, 
+            name: 'javascript', //#2 - key:value
+            score: 50 
+            }
+    ```
+    Now  as <font color="red">key </font> of #1 <font color="red">name:</font><font color="green">name</font> at left should match to <font color="red">key </font> of #2 <font color="red">name:</font><font color="green">'javascript'</font> in right side then <font color="green">value</font>  of #2 right side<font color="green">'javascript'</font> is assinged to <font color="green">value</font> of #1 left side <font color="green">name</font>.
+    So now as we know if the key and value has the same name in Object (See [Property value shorthand](#shorthand))
+    it can be written as inleft hand side. 
+    ```javascript
+    let {
+            name, //#1 - key:value
+            score 
+          } = { id: 1, 
+                name: 'javascript', //#2 - key:value
+                score: 50 
+                }
+       console.log(name); // javascript        
+    ```
+    but here <font color="red">key </font> is not printed its the <font color="green">value</font>  is getting printed. To understand this let us see the next example.
+    ```javascript
+    let {
+            name:fullname, //#1 - key:value
+            score //#3
+          } = { id: 1, 
+                name: 'javascript', //#2 - key:value
+                score: 50 
+                }
+    ```
+  Here 'score' #3 has the same key-value pairs name ,but the <font color="red">name:</font><font color="green">fullname</font> has different key-value pairs name. So if we want to check the <font color="green">value</font> of <font color="red">name:</font> at #1. we can do by 'fullname' and not the name.
+
+    ```javascript
+      console.log(fullname); // javascript   
+    ```
+Now this is how assigment is done, also as we understand that both side we have object, and we need a scope for the left hand side Object, and that why we use the **let** keyword or **()** , so that left hand side anonymous Object can pollute the global space.
+
+- Array 
+    
