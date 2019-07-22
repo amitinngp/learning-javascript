@@ -761,3 +761,92 @@ Let dig into few of frequently used one.
         user.sayHi();
       ```
       for more on [Objects, Prototypes and Classes in JavaScript](https://alligator.io/js/objects-prototypes-classes/)
+
+**[⬆ back to top](#table-of-contents)**
+
+### Type Casting & Coercion
+ - Coercion refers to those not-obvious type casts that happen as a side-effect of different operations.
+ - Type coercion is the automatic conversion of a datum from one data type to another within an
+expression. Coercion occurs because the datum is stored as one data type but its context requires
+a different data type
+- For example
+```javascript
+    true + false
+    12 / "6"
+    "number" + 15 + 3
+    15 + 3 + "number"
+    [1] > null
+    "foo" + + "bar"
+    'true' == true
+    false == 'false'
+    null == ''
+    !!"false" == !!"true"
+    [‘x’] == ‘x’
+    [] + null + 1
+    [1,2,3] == [1,2,3]
+    {}+[]+{}+[1]
+    !+[]+[]+![]
+    new Date(0) - 0
+    new Date(0) + 0
+```
+More you can find [here](https://www.freecodecamp.org/news/js-type-coercion-explained-27ba3d9a2839/) and [here](https://levelup.gitconnected.com/javascript-the-weird-parts-part-i-data-types-type-coercion-pbr-3ecc751ad62)
+
+**[⬆ back to top](#table-of-contents)**
+
+### Iterators and Generators
+ - Regular functions return only one, single value (or nothing/ void).
+ - Generators can return (“yield”) multiple values, possibly an infinite number of values, one after another, on-demand. They work great with iterables, allowing to create data streams with ease.
+ - To create a generator, we need a special syntax construct: function*, so-called “generator function”.
+    ```javascript
+      function* generateSequence() {
+          yield 1;
+          yield 2;
+          return 3;
+        }
+      let generator = generateSequence();
+      let one = generator.next();
+      console.log(JSON.stringify(one)) // {value: 1, done: false}
+      let two = generator.next();
+      console.log(JSON.stringify(two)) // {value: 2, done: false}
+      let three = generator.next(); 
+       console.log(JSON.stringify(three)) // {value: 3, done: true} // so when it's return done=true
+    ```
+  - Generators are iterable
+   - using next()
+    ```javascript
+      function* generateSequence() {
+          yield 1;
+          yield 2;
+          return 3;
+        }
+      let generator = generateSequence();
+  
+      for(let value of generator) {
+        console.log(value); // 1, then 2
+      }
+    ```
+    Wait what happened to 3 ,It’s because for-of iteration ignores the last value, when done: true. So, if we want all results to be shown by for..of, we must return them with yield
+    
+    ```javascript
+      function* generateSequence() {
+          yield 1;
+          yield 2;
+          return 3;
+        }
+      let sequence = [0, ...generateSequence()];
+      console.log(sequence); // 0, 1, 2, 3
+      //or
+      function* generateSequence(start, end) {
+        for (let i = start; i <= end; i++) {
+          yield i;
+        }
+      }
+      let sequence = [...generateSequence(0,3)];
+      console.log(sequence); // 0, 1, 2, 3
+    ```
+
+  generateSequence() turns the iterable into array of items.
+
+  - Generators are created by generator functions function* f(…) {…}.
+  - Inside generators (only) there exists a yield operator.
+  - The outer code and the generator may exchange results via next/yield calls
