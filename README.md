@@ -26,7 +26,6 @@ Knowledge of javaScripts basics
 1. [Classes & Interface](#classes--interface)
 1. [Type Casting & Coercion](#type-casting--coercion)
 1. [Iterators and Generators](#iterators-and-generators)
-1. [Objects Properties](#object-properties)
 1. [Prototypes and inheritance](#prototypes-inheritance)
 1. [Error Handling](#error-handling)
 1. [Promises, async/await](#promises-async-await)
@@ -441,7 +440,14 @@ Let dig into few of frequently used one.
       > In splice ,**first** parameter defines the position where new elements should be **added** and 
       **second** parameter defines how many elements should be **removed** and rest parameters separated by **,**
       is considered as items to be **added**.
+      
       ```javascript
+      splice(
+        "where element should be added",
+        "How many element should be removed",
+        ".... Rest is items to be added"
+      )
+
       var data = ["1", "2", "3", "4"];
       data.splice(2, 1, "5", "6");
       ["1", "2", "5", "6", "4"]
@@ -845,3 +851,5 @@ More you can find [here](https://www.freecodecamp.org/news/js-type-coercion-expl
   - Generators are created by generator functions function* f(…) {…}.
   - Inside generators (only) there exists a yield operator.
   - The outer code and the generator may exchange results via next/yield calls
+
+**[⬆ back to top](#table-of-contents)**
